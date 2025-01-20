@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Blog Seo App" %></title>
+    <!-- Dynamic title based on the current page -->
+    <title><%= content_for(:title) || "Blog SEO App" %></title>
+
+    <!-- Meta tags for responsiveness and mobile compatibility -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Dynamic meta description for SEO -->
+    <%= tag.meta name: "description", content: content_for(:meta_description) || "A blog application to demonstrate SEO best practices in Rails." %>
+
+    <!-- Open Graph meta tags for social sharing -->
+    <%= tag.meta property: "og:title", content: content_for(:title) || "Blog SEO App" %>
+    <%= tag.meta property: "og:description", content: content_for(:meta_description) || "A blog application to demonstrate SEO best practices in Rails." %>
+    <% if content_for?(:image_url) %>
+      <%= tag.meta property: "og:image", content: yield(:image_url) %>
+    <% end %>
+
+    <!-- Twitter Cards meta tags -->
+    <%= tag.meta name: "twitter:card", content: "summary_large_image" %>
+    <%= tag.meta name: "twitter:title", content: content_for(:title) || "Blog SEO App" %>
+    <%= tag.meta name: "twitter:description", content: content_for(:meta_description) || "A blog application to demonstrate SEO best practices in Rails." %>
+    <% if content_for?(:image_url) %>
+      <%= tag.meta name: "twitter:image", content: yield(:image_url) %>
+    <% end %>
+
+    <!-- Security and application-specific meta tags -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- Additional tags for manifest and icons -->
     <%= yield :head %>
-
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
+
+    <!-- Tailwind and application styles -->
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    <!-- JavaScript imports -->
     <%= javascript_importmap_tags %>
   </head>
 
@@ -24,3 +51,4 @@
     </main>
   </body>
 </html>
+

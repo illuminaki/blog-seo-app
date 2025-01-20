@@ -38,6 +38,11 @@ gem "bootsnap", require: false
 gem 'dotenv', '~> 3.1', '>= 3.1.4'
 # url amigables
 gem 'friendly_id', '~> 5.4.0'
+# generate sitemaps
+gem 'sitemap_generator', '~> 6.1'
+# cron jobs
+gem 'whenever', '~> 1.0'
+
 
 
 group :development, :test do

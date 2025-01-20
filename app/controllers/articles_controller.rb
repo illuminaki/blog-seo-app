@@ -52,6 +52,16 @@ class ArticlesController < ApplicationController
       @article = Article.friendly.find(params[:id])
     end
 
+    # Set meta tags for the show action
+    def set_meta_tags
+      @article = Article.friendly.find(params[:id])
+
+      # Set dynamic meta tags
+      content_for :title, @article.title
+      content_for :meta_description, @article.meta_description
+      content_for :image_url, url_for(@article.image) if @article.image.attached?
+    end
+
     # Only allow a list of trusted parameters through.
     def article_params
       params.require(:article).permit(:title, :content, :slug, :meta_description)
