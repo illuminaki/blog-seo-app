@@ -42,6 +42,8 @@ gem 'friendly_id', '~> 5.4.0'
 gem 'sitemap_generator', '~> 6.1'
 # cron jobs
 gem 'whenever', '~> 1.0'
+# format image cconverter
+gem 'image_processing', '~> 1.13'
 
 
 

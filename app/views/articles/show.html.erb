@@ -7,6 +7,14 @@
 
   <h1 class="font-bold text-4xl">Showing article</h1>
 
+  <% if @article.image.attached? %>
+    <%= image_tag @article.optimized_image, 
+      alt: "#{@article.title} - Blog SEO App", 
+      loading: "lazy", 
+      class: "rounded-lg shadow-md w-full h-auto" %>
+  <% end %>
+
+
   <%= render @article %>
 
   <%= link_to "Edit this article", edit_article_path(@article), class: "mt-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
