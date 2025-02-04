@@ -1,0 +1,6 @@
+projectKey=rails-blog
+serverUrl=http://localhost:9000
+serverVersion=25.1.0.102122
+dashboardUrl=http://localhost:9000/dashboard?id=rails-blog
+ceTaskId=12dbe835-5e51-40b4-b836-a0533cc85ef0
+ceTaskUrl=http://localhost:9000/api/ce/task?id=12dbe835-5e51-40b4-b836-a0533cc85ef0
