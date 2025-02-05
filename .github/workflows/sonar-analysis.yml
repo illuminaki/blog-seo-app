@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout del repositorio
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Ejecutar análisis de SonarQube vía Docker
         env:
