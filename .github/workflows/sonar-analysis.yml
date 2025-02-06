@@ -19,7 +19,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           docker run --rm \
-            -e SONAR_HOST_URL="https://7add-201-184-187-42.ngrok-free.app" \
+            -e SONAR_HOST_URL="https://71b7-201-184-187-42.ngrok-free.app" \
             -v "$(pwd):/usr/src" \
             sonarsource/sonar-scanner-cli \
             -Dsonar.projectKey=rails-blog \
