@@ -2,7 +2,7 @@ class Article < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  validates :title, :content, presence: true
+
 
   has_one_attached :image
 
