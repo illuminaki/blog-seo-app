@@ -35,7 +35,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
  # envirom ents variables
-gem 'dotenv', '~> 3.1', '>= 3.1.4'
+gem 'dotenv', '~> 3.1'
 # url amigables
 gem 'friendly_id', '~> 5.4.0'
 # generate sitemaps
